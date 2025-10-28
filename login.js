@@ -1,26 +1,33 @@
-// Tunggu sampai seluruh elemen DOM siap
 document.addEventListener('DOMContentLoaded', () => {
   const signUpButton = document.getElementById('signUp');
   const signInButton = document.getElementById('signIn');
   const container = document.getElementById('container');
+  const loginForm = document.getElementById('loginForm');
+  const registerForm = document.getElementById('registerForm');
 
-  // Pastikan elemen-elemen ditemukan
-  if (!signUpButton || !signInButton || !container) {
-    console.warn("Beberapa elemen (signUp, signIn, container) tidak ditemukan di HTML.");
-    return;
-  }
+  if (!signUpButton || !signInButton || !container) return;
 
-  console.log('UI elements found — attaching listeners');
-
-  // Ketika tombol "Daftar" diklik
   signUpButton.addEventListener('click', () => {
-    console.log('signUp clicked');
     container.classList.add('right-panel-active');
   });
 
-  // Ketika tombol "Masuk" diklik
   signInButton.addEventListener('click', () => {
-    console.log('signIn clicked');
+    container.classList.remove('right-panel-active');
+  });
+
+  // === Ketika form login dikirim ===
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // biar gak reload
+    // Kamu bisa tambahkan validasi di sini kalau mau
+    window.location.href = "../main-page/index.html"; 
+    // Ganti path ini sesuai lokasi folder halaman utama kamu
+  });
+
+  // === Ketika form register dikirim ===
+  registerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // Simulasi pembuatan akun
+    alert("Akun berhasil dibuat! Silakan login.");
     container.classList.remove('right-panel-active');
   });
 });

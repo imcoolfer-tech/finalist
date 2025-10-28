@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To Do Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>To Do</h2>
+      <button class="new-task">+ New Task</button>
+      <input type="text" id="searchInput" placeholder="Search tasks..." />
+      <ul class="task-list"></ul>
+      <select id="bgSelector">
+  <option value="default">Default</option>
+  <option value="galaxy">BMO</option>
+  <option value="forest">Kitten</option>
+  <option value="ocean">Marcelyn</option>
+  <option value="abstract">Black Cat</option>
+  <option value="custom">+ Upload Custom</option>
+</select>
+
+<!-- Tempat preview wallpaper -->
+<div class="bg-preview-container" id="bgPreviewContainer">
+  <img id="bgPreview" src="" alt="Background Preview" />
+</div>
+
+<!-- Input file (disembunyikan) -->
+<input type="file" id="bgUpload" accept="image/*" style="display: none;">
+</select>
+    </aside>
+
+    <main class="main">
+      <main class="main">
+  <div id="quoteBox" class="quote-box"></div>
+  <header>
+    <h3 id="taskTitleHeader">All Tasks</h3>
+  </header>
+  <div id="taskDetails" class="task-details"></div>
+</main>
+      <header>
+        <h3 id="taskTitleHeader">All Tasks</h3>
+      </header>
+      <div id="taskDetails" class="task-details"></div>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <input type="date" id="taskDeadline" />
+<input type="range" id="taskProgress" min="0" max="100" value="0" />
+<label for="taskProgress">Progress: <span id="progressValue">0%</span></label>
+      <h3>New Task</h3>
+      <input type="text" id="taskInput" placeholder="Enter task title..." />
+      <textarea id="taskDescInput" placeholder="Enter task description..."></textarea>
+      <div class="modal-buttons">
+        <button id="saveTask">Save</button>
+        <button id="cancelTask">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
